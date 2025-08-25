@@ -1,0 +1,33 @@
+# Praxis Initiative - Robots.txt
+# Criminal Justice Reform & Prison Oversight Organization
+
+User-agent: *
+# Allow all crawlers full access to render the site.
+# Sensitive files should be excluded from the build/deploy process.
+Disallow: /.htaccess
+Disallow: /README.md
+Disallow: /CHANGELOG.md
+Disallow: /package.json
+
+# Allow social media crawlers full access
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Google specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://praxisinitiative.org/sitemap.xml
+
+# Additional information
+# Organization: Praxis Initiative
+# Focus: Criminal Justice Reform, Prison Oversight, Arizona
+# Contact: info@praxisinitiative.org 

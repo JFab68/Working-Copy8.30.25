@@ -1,0 +1,140 @@
+# Praxis Initiative - Apache Configuration
+# Performance and SEO optimizations
+
+# Security Headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+# Content Security Policy
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.givebutter.com https://widgets.givebutter.com https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://js.givebutter.com;"
+
+# Enable mod_rewrite
+RewriteEngine On
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirect old numbered files to clean URLs
+RewriteRule ^1[%20]*Homepage\.html$ / [R=301,L]
+RewriteRule ^2[%20]*Issues\.html$ /issues [R=301,L]
+RewriteRule ^3[%20]*About\.html$ /about [R=301,L]
+RewriteRule ^4[%20]*Programs\.html$ /programs [R=301,L]
+RewriteRule ^4A[%20]*prison_oversight_page\.html$ /programs/prison-oversight [R=301,L]
+RewriteRule ^4B[%20]*criminal_legal_reform_page\.html$ /programs/criminal-legal-reform [R=301,L]
+RewriteRule ^4C[%20]*drug_policy_page\.html$ /programs/drug-policy [R=301,L]
+RewriteRule ^4D[%20]*civic_engagement_page\.html$ /programs/civic-engagement [R=301,L]
+RewriteRule ^4E[%20]*arts_in_prison_page\.html$ /programs/arts-in-prison [R=301,L]
+RewriteRule ^5[%20]*Action[%20]*Center\.html$ /action-center [R=301,L]
+RewriteRule ^6[%20]*Partners\.html$ /partners [R=301,L]
+RewriteRule ^7[%20]*News\.html$ /news [R=301,L]
+RewriteRule ^8[%20]*Contact\.html$ /contact [R=301,L]
+RewriteRule ^9[%20]*Donate\.html$ /donate [R=301,L]
+
+# Map clean URLs to actual files
+RewriteRule ^about/?$ "3 About.html" [NC,L]
+RewriteRule ^issues/?$ "2 Issues.html" [NC,L]
+RewriteRule ^programs/?$ "4 Programs.html" [NC,L]
+RewriteRule ^programs/prison-oversight/?$ "4A prison_oversight_page.html" [NC,L]
+RewriteRule ^programs/criminal-legal-reform/?$ "4B criminal_legal_reform_page.html" [NC,L]
+RewriteRule ^programs/drug-policy/?$ "4C drug_policy_page.html" [NC,L]
+RewriteRule ^programs/civic-engagement/?$ "4D civic_engagement_page.html" [NC,L]
+RewriteRule ^programs/arts-in-prison/?$ "4E arts_in_prison_page.html" [NC,L]
+RewriteRule ^action-center/?$ "5 Action Center.html" [NC,L]
+RewriteRule ^partners/?$ "6 Partners.html" [NC,L]
+RewriteRule ^news/?$ "7 News.html" [NC,L]
+RewriteRule ^contact/?$ "8 Contact.html" [NC,L]
+RewriteRule ^donate/?$ "9 Donate.html" [NC,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{THE_REQUEST} /+[^?\s]*?/[\s?]
+RewriteRule ^(.*)/ /$1 [R=301,L]
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType application/json "access plus 1 day"
+    ExpiresByType application/xml "access plus 1 day"
+</IfModule>
+
+# Cache Control Headers
+<IfModule mod_headers.c>
+    <filesMatch "\\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </filesMatch>
+    <filesMatch "\\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </filesMatch>
+</IfModule>
+
+# Prevent access to sensitive files
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.log">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "README.md">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "CHANGELOG.md">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Error Pages
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Prevent directory browsing
+Options -Indexes
+
+# Protect against hotlinking
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(.*\.)?praxisinitiative\.org/ [NC]
+RewriteRule \.(jpe?g|png|gif|webp|svg)$ - [F]

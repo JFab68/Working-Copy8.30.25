@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude config set --global env.WORDPRESS_URL \"https://praxisinitiative.org\")",
+      "Bash(claude config set:*)",
+      "Bash(claude config set --global env.WORDPRESS_PASSWORD \"your-app-password\")",
+      "mcp__playwright__playwright_navigate",
+      "mcp__playwright__playwright_evaluate",
+      "Bash(npm search \"mcp relay\")",
+      "Bash(npm search \"mcp browser\")",
+      "Bash(npm search \"mcp transport\")",
+      "Bash(npm search:*)",
+      "Bash(npm info:*)",
+      "Bash(npm install:*)",
+      "mcp__puppeteer__puppeteer_click",
+      "mcp__puppeteer__puppeteer_evaluate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "WebSearch",
+      "WebFetch(domain:praxisinitiative.org)"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}

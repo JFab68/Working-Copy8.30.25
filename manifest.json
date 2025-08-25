@@ -1,0 +1,22 @@
+{
+  "name": "Praxis Initiative",
+  "short_name": "Praxis",
+  "start_url": "1 Homepage.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#000080",
+  "description": "Transforming justice in Arizona through oversight, advocacy, and support.",
+  "icons": [
+    {
+      "src": "10 Assets/Prison Oversight/Ombudsman Graphic Word Bubble Good (2025_02_23 03_33_26 UTC).gif",
+      "sizes": "192x192",
+      "type": "image/gif"
+    },
+    {
+      "src": "10 Assets/Prison Oversight/Ombudsman Graphic Word Bubble Good (2025_02_23 03_33_26 UTC).gif",
+      "sizes": "512x512",
+      "type": "image/gif"
+    }
+  ],
+  "version": "1.0.1"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "newsite",
+  "version": "1.0.1",
+  "description": "Praxis Initiative static site",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version",
+    "serve": "npx http-server -p 8080",
+    "test:visual": "node scripts/visual-audit.js"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0",
+    "http-server": "^14.1.1",
+    "playwright": "^1.44.1"
+  },
+  "dependencies": {}
+}

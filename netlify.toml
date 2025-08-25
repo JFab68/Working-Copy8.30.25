@@ -1,0 +1,73 @@
+[build]
+  publish = "."
+  command = "" # No build step needed for this static site
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/10 Assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# --- Clean URL Redirects ---
+# This makes your URLs look professional (e.g., /about instead of /3 About.html)
+
+[[redirects]]
+  from = "/"
+  to = "/1 Homepage.html"
+  status = 200 # 200 rewrite keeps the URL clean
+
+[[redirects]]
+  from = "/issues"
+  to = "/2 Issues.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/3 About.html"
+  status = 200
+
+[[redirects]]
+  from = "/programs"
+  to = "/4 Programs.html"
+  status = 200
+
+[[redirects]]
+  from = "/action-center"
+  to = "/5 Action Center.html"
+  status = 200
+
+[[redirects]]
+  from = "/partners"
+  to = "/6 Partners.html"
+  status = 200
+
+[[redirects]]
+  from = "/news"
+  to = "/7 News.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html" # It's best practice to have a custom 404 page
+  status = 404

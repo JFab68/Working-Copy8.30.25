@@ -16,7 +16,18 @@
       "mcp__puppeteer__puppeteer_evaluate",
       "mcp__puppeteer__puppeteer_screenshot",
       "WebSearch",
-      "WebFetch(domain:praxisinitiative.org)"
+      "WebFetch(domain:praxisinitiative.org)",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__filesystem__read_text_file",
+      "mcp__filesystem__list_directory",
+      "Bash(node:*)",
+      "mcp__filesystem__get_file_info",
+      "mcp__filesystem__list_directory_with_sizes",
+      "Bash(dir:*)",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__read_media_file",
+      "mcp__puppeteer__puppeteer_navigate",
+      "Bash(powershell:*)"
     ],
     "defaultMode": "acceptEdits"
   }

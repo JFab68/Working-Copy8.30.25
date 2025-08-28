@@ -9,9 +9,13 @@
     "test:visual": "node scripts/visual-audit.js"
   },
   "devDependencies": {
-    "standard-version": "^9.5.0",
+    "glob": "^11.0.3",
     "http-server": "^14.1.1",
-    "playwright": "^1.44.1"
+    "playwright": "^1.44.1",
+    "puppeteer": "^24.17.0",
+    "standard-version": "^9.5.0"
   },
-  "dependencies": {}
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

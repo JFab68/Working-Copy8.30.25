@@ -5,3 +5,5 @@
 ".env" 
 audits/
 lighthouse-report.html
+audits/
+lighthouse-report.html

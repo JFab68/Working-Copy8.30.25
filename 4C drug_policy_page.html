@@ -15,6 +15,10 @@
     <meta name="twitter:title" content="Drug Policy & Overdose Prevention | Praxis Initiative">
     <meta name="twitter:description" content="Praxis Initiative advances evidence-based drug policy and overdose prevention in Arizona. Taking a public health approach to substance use with harm reduction strategies.">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://js.givebutter.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Miller+Text:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://js.givebutter.com/elements/latest.js"></script>
@@ -68,6 +72,23 @@
     <!-- End Header -->
 
     <main id="main-content" role="main">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="1 Homepage.html" class="breadcrumb-link">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="4 Programs.html" class="breadcrumb-link">Programs</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Drug Policy
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
         <section class="hero drug-policy-hero">
             <div class="container">
                 <div class="hero-content">
@@ -379,7 +400,7 @@
                         <form class="newsletter-form" onsubmit="handleDrugPolicyNewsletter(event)">
                             <div class="form-group">
                                 <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                                <button type="submit" class="btn btn-primary btn-loading">Subscribe</button>
                             </div>
                             <div class="form-group">
                                 <label class="checkbox-label">
@@ -445,6 +466,7 @@
     <footer id="global-footer" role="contentinfo"></footer>
     
     <script src="js/components.js"></script>
+    <script src="js/forms.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Mobile Menu Toggle

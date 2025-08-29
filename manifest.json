@@ -1,22 +1,193 @@
 {
-  "name": "Praxis Initiative",
+  "name": "Praxis Initiative - Transforming Justice in Arizona",
   "short_name": "Praxis",
-  "start_url": "1 Homepage.html",
+  "description": "Directly impacted-led nonprofit transforming the criminal legal system through independent prison oversight, harm reduction, and bipartisan policy solutions.",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#000080",
-  "description": "Transforming justice in Arizona through oversight, advocacy, and support.",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["education", "social", "government", "non-profit"],
+  "version": "1.0.3",
+  "author": "Praxis Initiative",
+  "developer": {
+    "name": "Praxis Initiative",
+    "url": "https://praxisinitiative.org"
+  },
   "icons": [
     {
-      "src": "10 Assets/Prison Oversight/Ombudsman Graphic Word Bubble Good (2025_02_23 03_33_26 UTC).gif",
-      "sizes": "192x192",
-      "type": "image/gif"
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "10 Assets/Prison Oversight/Ombudsman Graphic Word Bubble Good (2025_02_23 03_33_26 UTC).gif",
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
       "sizes": "512x512",
-      "type": "image/gif"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "version": "1.0.1"
+  "screenshots": [
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Praxis Initiative Homepage"
+    },
+    {
+      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Praxis Initiative Mobile View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Get Involved",
+      "short_name": "Action Center",
+      "description": "Take action and get involved in our mission",
+      "url": "/5 Action Center.html",
+      "icons": [
+        {
+          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with our team",
+      "url": "/8 Contact.html",
+      "icons": [
+        {
+          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Support Our Mission",
+      "short_name": "Donate",
+      "description": "Make a donation to support our work",
+      "url": "/9 Donate.html",
+      "icons": [
+        {
+          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Our Programs",
+      "short_name": "Programs",
+      "description": "Explore our five core program areas",
+      "url": "/4 Programs.html",
+      "icons": [
+        {
+          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Latest News",
+      "short_name": "News",
+      "description": "Stay updated with our latest news and research",
+      "url": "/7 News.html",
+      "icons": [
+        {
+          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "iarc_rating_id": "",
+  "dir": "ltr",
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "handle_links": "preferred",
+  "file_handlers": [],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }

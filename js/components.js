@@ -2176,22 +2176,24 @@ function shareAdvocacy() {
 // Newsletter Signup Functionality
 function handleNewsletterSignup(event) {
     event.preventDefault();
-    
+
     const form = event.target;
     const email = form.email.value;
     const interests = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
-    
+
     // Show loading state
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Subscribing...';
+    submitBtn.classList.add('loading', 'btn-loading');
     submitBtn.disabled = true;
-    
+
     // Simulate API call (replace with actual integration)
     setTimeout(() => {
         alert(`Thank you for subscribing! You'll receive updates about: ${interests.join(', ')}`);
         form.reset();
         submitBtn.textContent = originalText;
+        submitBtn.classList.remove('loading', 'btn-loading');
         submitBtn.disabled = false;
     }, 1500);
 }
@@ -3097,20 +3099,22 @@ function shareDrugPolicy() {
 // Newsletter Signup
 function handleDrugPolicyNewsletter(event) {
     event.preventDefault();
-    
+
     const form = event.target;
     const email = form.email.value;
     const interests = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
-    
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Subscribing...';
+    submitBtn.classList.add('loading', 'btn-loading');
     submitBtn.disabled = true;
-    
+
     setTimeout(() => {
         alert(`Thank you for subscribing to drug policy updates!\n\nYou'll receive information about: ${interests.join(', ')}`);
         form.reset();
         submitBtn.textContent = originalText;
+        submitBtn.classList.remove('loading', 'btn-loading');
         submitBtn.disabled = false;
     }, 1500);
 }
@@ -3752,20 +3756,22 @@ function shareCivicEngagement() {
 // Newsletter Signup
 function handleCivicNewsletter(event) {
     event.preventDefault();
-    
+
     const form = event.target;
     const email = form.email.value;
     const interests = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
-    
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Subscribing...';
+    submitBtn.classList.add('loading', 'btn-loading');
     submitBtn.disabled = true;
-    
+
     setTimeout(() => {
         alert(`Thank you for subscribing to civic engagement updates!\n\nYou'll receive information about: ${interests.join(', ')}`);
         form.reset();
         submitBtn.textContent = originalText;
+        submitBtn.classList.remove('loading', 'btn-loading');
         submitBtn.disabled = false;
     }, 1500);
 }
@@ -4404,20 +4410,22 @@ function shareArtsProgram() {
 // Newsletter Signup
 function handleArtsNewsletter(event) {
     event.preventDefault();
-    
+
     const form = event.target;
     const email = form.email.value;
     const interests = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
-    
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Subscribing...';
+    submitBtn.classList.add('loading', 'btn-loading');
     submitBtn.disabled = true;
-    
+
     setTimeout(() => {
         alert(`Thank you for subscribing to arts program updates!\n\nYou'll receive information about: ${interests.join(', ')}`);
         form.reset();
         submitBtn.textContent = originalText;
+        submitBtn.classList.remove('loading', 'btn-loading');
         submitBtn.disabled = false;
     }, 1500);
 }

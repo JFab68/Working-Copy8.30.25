@@ -35,7 +35,7 @@
     <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://js.givebutter.com">
     
     <!-- Optimized Font Loading -->
@@ -179,7 +179,7 @@
                             <p>Get the latest on all our initiatives—from prison oversight and policy research to community trainings and advocacy campaigns—delivered right to your inbox.</p>
                             <form class="newsletter-form">
                                 <input type="email" placeholder="Enter your email" required>
-                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                                <button type="submit" class="btn btn-primary btn-loading">Subscribe</button>
                             </form>
                         </div>
                     </div>
@@ -797,6 +797,7 @@
     </footer>
 
     <script src="js/components.js"></script>
+    <script src="js/forms.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Mobile Menu Toggle
@@ -899,38 +900,8 @@
                 counterObserver.observe(section);
             });
 
-            // Contact form handling
-            const contactForm = document.querySelector('.contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData);
-                    
-                    // Simple validation
-                    if (!data.name || !data.email || !data.message) {
-                        alert('Please fill in all required fields.');
-                        return;
-                    }
-                    
-                    // Show success message (in real implementation, this would send to server)
-                    alert('Thank you for your message! We\'ll get back to you within 48 hours.');
-                    this.reset();
-                });
-            }
-
-            // Newsletter form submission
-            const newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const email = e.target.querySelector('input[type="email"]').value;
-                    alert(`Thank you for subscribing with email: ${email}. You'll receive updates on our prison oversight advocacy, policy research, and community programs.`);
-                    e.target.reset();
-                });
-            }
+            // Contact form handling - REMOVED: Now handled by forms.js
+            // Newsletter form submission - REMOVED: Now handled by forms.js
 
             // Carousel pause on hover
             const carousel = document.querySelector('.carousel-container');

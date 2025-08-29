@@ -120,6 +120,7 @@ class FormHandler {
 
     async handleContactSubmission(form) {
         const submitBtn = form.querySelector('button[type="submit"]');
+        const formContainer = form.closest('.form-container') || form.closest('.contact-form-fields');
         const originalText = submitBtn.innerHTML;
         
         // Validate all fields
@@ -138,7 +139,13 @@ class FormHandler {
         }
 
         try {
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            // Add loading state to form container
+            if (formContainer) {
+                formContainer.classList.add('loading');
+            }
+            
+            // Add loading state to submit button
+            submitBtn.classList.add('btn-loading');
             submitBtn.disabled = true;
 
             // Simulate form submission (replace with actual endpoint)
@@ -147,20 +154,39 @@ class FormHandler {
             this.showMessage('Thank you! Your message has been sent successfully.', 'success');
             form.reset();
             
+            // Clear any error states
+            form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            form.querySelectorAll('.error-message').forEach(el => el.remove());
+            
         } catch (error) {
             this.showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
         } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
+            submitBtn.classList.remove('btn-loading');
+            if (formContainer) {
+                formContainer.classList.remove('loading');
+            }
         }
     }
 
     async handleNewsletterSubmission(form) {
         const email = form.querySelector('input[type="email"]').value;
         const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
         
+        // Basic email validation
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            this.showMessage('Please enter a valid email address', 'error');
+            return;
+        }
+
         try {
-            submitBtn.innerHTML = 'Subscribing...';
+            // Add loading state to newsletter form
+            form.classList.add('loading');
+            
+            // Add loading state to submit button
+            submitBtn.classList.add('btn-loading');
             submitBtn.disabled = true;
 
             // Simulate newsletter subscription
@@ -172,8 +198,10 @@ class FormHandler {
         } catch (error) {
             this.showMessage('Error subscribing. Please try again.', 'error');
         } finally {
-            submitBtn.innerHTML = 'Subscribe';
+            submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
+            submitBtn.classList.remove('btn-loading');
+            form.classList.remove('loading');
         }
     }
 
@@ -249,7 +277,7 @@ class FormHandler {
 
         const messageEl = document.createElement('div');
         messageEl.className = `form-message ${type}`;
-        messageEl.textContent = message;
+        messageEl.innerHTML = `<span class="message-content">${message}</span>`;
 
         // Insert at top of page or near form
         const targetElement = document.querySelector('main') || document.body;

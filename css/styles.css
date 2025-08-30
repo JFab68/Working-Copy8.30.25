@@ -2547,7 +2547,7 @@ html {
  transition: opacity 0.3s ease;
 }
 
-/* Fade in animation for content */
+/* Fade in animation for content - Robust CSS-first solution */
 .fade-in-up {
  opacity: 0;
  transform: translateY(30px);
@@ -2557,6 +2557,15 @@ html {
 .fade-in-up.visible {
  opacity: 1;
  transform: translateY(0);
+}
+
+/* Ensure specific card types are hidden initially to prevent flash */
+.change-card:not(.visible),
+.team-member:not(.visible),
+.impact-item:not(.visible),
+.challenge-item:not(.visible) {
+ opacity: 0;
+ transform: translateY(30px);
 }
 
 /* Stagger animation delays */
@@ -7109,9 +7118,8 @@ html {
  }
 }
 
-.fade-in-up {
- animation: fadeInUp 0.6s ease-out forwards;
-}
+/* Removed conflicting fade-in-up definition to prevent animation conflicts.
+   Using transition-based approach defined earlier in the file. */
 
 /* Counter Animation */
 @keyframes countUp {

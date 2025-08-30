@@ -57,30 +57,43 @@ class AnimatedCounters {
 class ScrollAnimations {
     constructor() {
         this.elements = [];
+        this.observer = null;
         this.init();
     }
 
     init() {
-        // Add fade-in-up class to elements
+        // Find elements that should be animated
         const elementsToAnimate = document.querySelectorAll('.change-card, .team-member, .impact-item, .challenge-item');
+        
         elementsToAnimate.forEach(el => {
-            el.classList.add('fade-in-up');
+            // Ensure consistent initial state
+            if (!el.classList.contains('fade-in-up')) {
+                el.classList.add('fade-in-up');
+            }
+            // Remove visible class if it exists to ensure clean initial state
+            el.classList.remove('visible');
             this.elements.push(el);
         });
 
-        if ('IntersectionObserver' in window) {
-            this.setupIntersectionObserver();
-        } else {
-            // Fallback for older browsers
-            this.elements.forEach(el => el.classList.add('visible'));
-        }
+        // Initialize observer after a small delay to ensure DOM is fully ready
+        requestAnimationFrame(() => {
+            if ('IntersectionObserver' in window) {
+                this.setupIntersectionObserver();
+            } else {
+                // Fallback for older browsers - show all elements
+                this.elements.forEach(el => el.classList.add('visible'));
+            }
+        });
     }
 
     setupIntersectionObserver() {
-        const observer = new IntersectionObserver((entries) => {
+        this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Add visible class to trigger animation
                     entry.target.classList.add('visible');
+                    // Stop observing this element once it's animated
+                    this.observer.unobserve(entry.target);
                 }
             });
         }, {
@@ -88,12 +101,49 @@ class ScrollAnimations {
             rootMargin: '0px 0px -50px 0px'
         });
 
-        this.elements.forEach(el => observer.observe(el));
+        // Observe all elements
+        this.elements.forEach(el => {
+            if (this.observer) {
+                this.observer.observe(el);
+            }
+        });
+    }
+
+    // Clean up method for better memory management
+    destroy() {
+        if (this.observer) {
+            this.observer.disconnect();
+            this.observer = null;
+        }
+        this.elements = [];
     }
 }
 
-// Initialize animations when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    new AnimatedCounters();
-    new ScrollAnimations();
-});
+// Initialize animations with robust DOM ready detection
+function initializeAnimations() {
+    const counters = new AnimatedCounters();
+    const scrollAnimations = new ScrollAnimations();
+    
+    // Store references for potential cleanup
+    if (typeof window !== 'undefined') {
+        window.praxisAnimations = {
+            counters,
+            scrollAnimations
+        };
+    }
+}
+
+// Multiple ways to ensure DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAnimations);
+} else if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    // DOM is already ready, initialize immediately
+    initializeAnimations();
+}
+
+// Fallback in case DOMContentLoaded doesn't fire
+setTimeout(() => {
+    if (!window.praxisAnimations) {
+        initializeAnimations();
+    }
+}, 100);

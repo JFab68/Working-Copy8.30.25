@@ -549,3 +549,32 @@ img {
     padding: 20px 0;
   }
 }
+
+/* Animation fixes for card visibility issues - Added 2025-01-30 */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure specific card types are hidden initially to prevent flash */
+.change-card:not(.visible),
+.team-member:not(.visible),
+.impact-item:not(.visible),
+.challenge-item:not(.visible) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Stagger animation delays */
+.fade-in-up:nth-child(1) { transition-delay: 0.1s; }
+.fade-in-up:nth-child(2) { transition-delay: 0.2s; }
+.fade-in-up:nth-child(3) { transition-delay: 0.3s; }
+.fade-in-up:nth-child(4) { transition-delay: 0.4s; }
+.fade-in-up:nth-child(5) { transition-delay: 0.5s; }
+.fade-in-up:nth-child(6) { transition-delay: 0.6s; }

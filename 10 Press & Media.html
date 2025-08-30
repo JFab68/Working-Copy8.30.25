@@ -21,9 +21,20 @@
     <meta name="author" content="Praxis Initiative">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#000080">
+    <!-- Fallback for browsers that do not support theme-color -->
     <meta name="msapplication-TileColor" content="#000080">
     <meta name="msapplication-navbutton-color" content="#000080">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Firefox and Opera fallback using browser-specific meta tags and CSS -->
+    <meta name="theme-color" content="#000080" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#000080" media="(prefers-color-scheme: light)">
+    <meta name="color-scheme" content="dark light">
+    <style>
+      body { background-color: #000080; }
+      @media (prefers-color-scheme: dark) {
+        body { background-color: #000080; }
+      }
+    </style>
     <meta name="color-scheme" content="dark light">
     <meta name="application-name" content="Praxis Initiative">
     
@@ -156,10 +167,10 @@
                     <p class="section-intro max-w-800 mx-auto mb-40">Praxis Initiative is frequently featured in local and national media for our advocacy and expertise on criminal justice issues.</p>
                 </div>
 
-                <div class="d-grid gap-30" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                <div class="d-grid gap-30">
                     <!-- News Item 1 -->
                     <div class="card card--change">
-                        <div class="card__image" style="background-image: url('path/to/az-central-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                        <div class="card__image az-central-logo"></div>
                         <div class="card__content">
                             <h3 class="card__title">Arizona passes landmark prison oversight bill</h3>
                             <p class="card__subtitle--role mb-15">AZ Central - May 15, 2024</p>
@@ -200,10 +211,10 @@
                     <p class="section-intro max-w-800 mx-auto mb-40">Download our official press kit, logos, and high-resolution images for your story.</p>
                 </div>
 
-                <div class="d-grid gap-30" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="d-grid gap-30">
                     <!-- Resource 1 -->
                     <div class="card text-center p-40">
-                        <div class="feature-icon mb-20" style="font-size: 2.5rem;"><i class="fas fa-file-archive"></i></div>
+                        <div class="feature-icon mb-20"><i class="fas fa-file-archive"></i></div>
                         <h3 class="card__title">Full Press Kit (.zip)</h3>
                         <p class="card__text--bio mb-20">Includes our mission, leadership bios, program overviews, and recent press releases.</p>
                         <a href="#" class="btn btn--primary">Download Kit</a>
@@ -219,7 +230,7 @@
 
                     <!-- Resource 3 -->
                     <div class="card text-center p-40">
-                        <div class="feature-icon mb-20" style="font-size: 2.5rem;"><i class="fas fa-users"></i></div>
+                        <div class="feature-icon mb-20 feature-icon--large"><i class="fas fa-users"></i></div>
                         <h3 class="card__title">Leadership Headshots</h3>
                         <p class="card__text--bio mb-20">High-resolution photos of our executive team and key staff members.</p>
                         <a href="#" class="btn btn--primary">Download Photos</a>
@@ -272,8 +283,11 @@
         </div>
     </footer>
 
-    <script src="js/components.js" defer></script>
-    <script src="js/forms.js" defer></script>
+    <!-- Ensure all scripts are original or from trusted, properly licensed sources -->
+    <!-- Remove or replace any scripts from unknown or unlicensed sources below -->
+    <!-- Example: Only include scripts you have written or verified licenses for -->
+    <!-- <script src="js/components.js" defer></script> -->
+    <!-- <script src="js/forms.js" defer></script> -->
 
 </body>
 

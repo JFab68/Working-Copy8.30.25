@@ -19,89 +19,25 @@
   "icons": [
     {
       "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "16x16",
+      "sizes": "1078x218",
       "type": "image/png",
       "purpose": "any"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "32x32",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "48x48",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
     }
+    // If you have actual images for each size, replace the src with the correct image file for each size.
+    // Otherwise, remove the other icon entries or update their "sizes" to "1078x218" to match the actual image dimensions.
   ],
   "screenshots": [
     {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "src": "10-assets/praxis-logos/praxis-logo-white-transparent-4312-872.webp",
       "sizes": "1280x720",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "wide",
       "label": "Praxis Initiative Homepage"
     },
     {
-      "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+      "src": "10-assets/praxis-logos/praxis-logo-white-transparent-4312-872.webp",
       "sizes": "750x1334",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "narrow",
       "label": "Praxis Initiative Mobile View"
     }
@@ -114,7 +50,7 @@
       "url": "/5 Action Center.html",
       "icons": [
         {
-          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "src": "10-assets/praxis-logos/praxis-logo-white-transparent-4312-872.webp",
           "sizes": "96x96"
         }
       ]
@@ -126,7 +62,7 @@
       "url": "/8 Contact.html",
       "icons": [
         {
-          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "src": "10-assets/praxis-logos/praxis-logo-white-transparent-4312-872.webp",
           "sizes": "96x96"
         }
       ]
@@ -138,7 +74,7 @@
       "url": "/9 Donate.html",
       "icons": [
         {
-          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "src": "10-assets/praxis-logos/praxis-logo-white-transparent-4312-872.webp",
           "sizes": "96x96"
         }
       ]
@@ -150,7 +86,7 @@
       "url": "/4 Programs.html",
       "icons": [
         {
-          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "src": "10-assets/praxis-logos/praxis-logo-white-transparent-4312-872.webp",
           "sizes": "96x96"
         }
       ]
@@ -162,7 +98,7 @@
       "url": "/7 News.html",
       "icons": [
         {
-          "src": "10 Assets/praxis-logos/praxis-logo-new-italic-tagline-navy-transparent-bg-1078-x-218.png",
+          "src": "10-assets/praxis-logos/praxis-logo-white-transparent-4312-872.webp",
           "sizes": "96x96"
         }
       ]

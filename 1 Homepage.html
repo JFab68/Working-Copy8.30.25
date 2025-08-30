@@ -21,17 +21,10 @@
     <meta name="author" content="Praxis Initiative">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#000080">
-    <meta name="color-scheme" content="dark light">
-    <meta name="msapplication-navbutton-color" content="#000080">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <style>
-      @media (prefers-color-scheme: dark) {
-        body { background-color: #000080; }
-      }
-    </style>
-    <meta name="msapplication-navbutton-color" content="#000080">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-TileColor" content="#000080">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-navbutton-color" content="#000080">
+    <meta name="color-scheme" content="dark light">
     <meta name="application-name" content="Praxis Initiative">
     
     <!-- Geo Location -->
@@ -62,135 +55,99 @@
     <!-- Fallback for original CSS if optimized version fails -->
     <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'; this.onload=null;">
     <script src="https://js.givebutter.com/elements/latest.js"></script>
+    <!-- Consolidated Schema.org Markup for SEO -->
     <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
         {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Praxis Initiative",
-            "alternateName": "Praxis Initiative - Transforming Justice in Arizona",
-            "url": "https://praxisinitiative.org/",
-            "logo": "https://praxisinitiative.org/10%20Assets/Prison%20Oversight/Ombudsman%20Graphic%20Word%20Bubble%20Good%20(2025_02_23%2003_33_26%20UTC).gif",
-            "description": "Directly impacted-led nonprofit transforming the criminal legal system through independent prison oversight, harm reduction, and bipartisan policy solutions.",
-            "foundingDate": "2020",
-            "founder": {
-                "@type": "Person",
-                "name": "John Fabricius",
-                "jobTitle": "Executive Director"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "4022 E. Greenway Rd. Ste. 11 PMB 1046",
-                "addressLocality": "Phoenix",
-                "addressRegion": "AZ",
-                "postalCode": "85032",
-                "addressCountry": "US"
-            },
-            "contactPoint": [{
-                "@type": "ContactPoint",
-                "email": "info@praxisinitiative.org",
-                "telephone": "+1-480-808-1800",
-                "contactType": "customer support",
-                "availableLanguage": "English"
-            }],
-            "sameAs": [
-                "https://x.com/PraxisInAZ",
-                "https://www.facebook.com/profile.php?id=61570241575216",
-                "https://www.linkedin.com/company/105368188",
-                "https://www.instagram.com/praxis_in_az"
-            ],
-            "nonprofitStatus": "501(c)(3)",
-            "knowsAbout": [
-                "Criminal Justice Reform",
-                "Prison Oversight",
-                "Drug Policy",
-                "Harm Reduction",
-                "Civic Engagement",
-                "Arts in Prison"
-            ],
-            "areaServed": {
-                "@type": "State",
-                "name": "Arizona",
-                "addressCountry": "US"
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Praxis Initiative Programs",
-                "itemListElement": [
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Prison Oversight",
-                            "description": "Independent monitoring and accountability for Arizona's correctional facilities"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Criminal Legal Reform",
-                            "description": "Evidence-based policy advocacy and legislative reform"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Drug Policy & Harm Reduction",
-                            "description": "Overdose prevention and evidence-based drug policy reform"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Civic Engagement",
-                            "description": "Empowering formerly incarcerated individuals with civic education"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Arts in Prison",
-                            "description": "Creative expression and therapeutic arts programming"
-                        }
-                    }
-                ]
-            }
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Praxis Initiative",
-            "url": "https://praxisinitiative.org/",
-            "description": "Directly impacted-led nonprofit transforming the criminal legal system through independent prison oversight, harm reduction, and bipartisan policy solutions.",
-            "publisher": {
-                "@type": "Organization",
-                "name": "Praxis Initiative"
-            },
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://praxisinitiative.org/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
+          "@type": "Organization",
+          "@id": "https://praxisinitiative.org/#organization",
+          "name": "Praxis Initiative",
+          "alternateName": "Praxis Initiative - Transforming Justice in Arizona",
+          "url": "https://praxisinitiative.org/",
+          "logo": "https://praxisinitiative.org/10%20Assets/Prison%20Oversight/Ombudsman%20Graphic%20Word%20Bubble%20Good%20(2025_02_23%2003_33_26%20UTC).gif",
+          "description": "Directly impacted-led nonprofit transforming the criminal legal system through independent prison oversight, harm reduction, and bipartisan policy solutions.",
+          "foundingDate": "2020",
+          "founder": {
+            "@type": "Person",
+            "name": "John Fabricius",
+            "jobTitle": "Executive Director"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4022 E. Greenway Rd. Ste. 11 PMB 1046",
+            "addressLocality": "Phoenix",
+            "addressRegion": "AZ",
+            "postalCode": "85032",
+            "addressCountry": "US"
+          },
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "email": "info@praxisinitiative.org",
+            "telephone": "+1-480-808-1800",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+          }],
+          "sameAs": [
+            "https://x.com/PraxisInAZ",
+            "https://www.facebook.com/profile.php?id=61570241575216",
+            "https://www.linkedin.com/company/105368188",
+            "https://www.instagram.com/praxis_in_az"
+          ],
+          "nonprofitStatus": "501(c)(3)",
+          "knowsAbout": [
+            "Criminal Justice Reform",
+            "Prison Oversight",
+            "Drug Policy",
+            "Harm Reduction",
+            "Civic Engagement",
+            "Arts in Prison"
+          ],
+          "areaServed": {
+            "@type": "State",
+            "name": "Arizona",
+            "addressCountry": "US"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Praxis Initiative Programs",
             "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://praxisinitiative.org/"
-                }
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prison Oversight", "description": "Independent monitoring and accountability for Arizona's correctional facilities"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Criminal Legal Reform", "description": "Evidence-based policy advocacy and legislative reform"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drug Policy & Harm Reduction", "description": "Overdose prevention and evidence-based drug policy reform"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Civic Engagement", "description": "Empowering formerly incarcerated individuals with civic education"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Arts in Prison", "description": "Creative expression and therapeutic arts programming"}}
             ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://praxisinitiative.org/",
+          "name": "Praxis Initiative",
+          "description": "Directly impacted-led nonprofit transforming the criminal legal system through independent prison oversight, harm reduction, and bipartisan policy solutions.",
+          "publisher": {
+            "@id": "https://praxisinitiative.org/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://praxisinitiative.org/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://praxisinitiative.org/"
+            }
+          ]
         }
+      ]
+    }
     </script>
 </head>
 
@@ -697,8 +654,8 @@
                     </div>
 
                     <div class="faq-accordion">
-                        <div class="faq-item fade-in" data-faq="1">
-                            <div class="faq-question" onclick="toggleFAQ(1)">
+                        <details class="faq-item fade-in">
+                            <summary class="faq-question">
                                 <div class="faq-question-content">
                                     <span class="faq-icon">❓</span>
                                     <span class="faq-text">What is Praxis Initiative?</span>
@@ -706,8 +663,8 @@
                                 <div class="faq-toggle">
                                     <i class="fas fa-chevron-down"></i>
                                 </div>
-                            </div>
-                            <div class="faq-answer" id="faq-answer-1">
+                            </summary>
+                            <div class="faq-answer">
                                 <div class="faq-answer-content">
                                     <p>Praxis Initiative is a directly impacted-led 501(c)(3) nonprofit dedicated to transforming the criminal legal system by reducing mass incarceration, promoting transparency, and ensuring equal treatment under the law through independent prison oversight, harm reduction, and bipartisan policy solutions.</p>
                                     <div class="faq-features">
@@ -726,10 +683,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </details>
 
-                        <div class="faq-item fade-in" data-faq="2">
-                            <div class="faq-question" onclick="toggleFAQ(2)">
+                        <details class="faq-item fade-in">
+                            <summary class="faq-question">
                                 <div class="faq-question-content">
                                     <span class="faq-icon">🤝</span>
                                     <span class="faq-text">How can I get involved?</span>
@@ -737,8 +694,8 @@
                                 <div class="faq-toggle">
                                     <i class="fas fa-chevron-down"></i>
                                 </div>
-                            </div>
-                            <div class="faq-answer" id="faq-answer-2">
+                            </summary>
+                            <div class="faq-answer">
                                 <div class="faq-answer-content">
                                     <p>There are many ways to support our mission: subscribe to our newsletter, follow us on social media, volunteer with our advocacy campaigns, attend our events, or support our work through donations. Every form of engagement helps strengthen our movement for justice reform.</p>
                                     <div class="faq-features">
@@ -760,10 +717,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </details>
 
-                        <div class="faq-item fade-in" data-faq="3">
-                            <div class="faq-question" onclick="toggleFAQ(3)">
+                        <details class="faq-item fade-in">
+                            <summary class="faq-question">
                                 <div class="faq-question-content">
                                     <span class="faq-icon">📋</span>
                                     <span class="faq-text">What programs does Praxis Initiative offer?</span>
@@ -771,8 +728,8 @@
                                 <div class="faq-toggle">
                                     <i class="fas fa-chevron-down"></i>
                                 </div>
-                            </div>
-                            <div class="faq-answer" id="faq-answer-3">
+                            </summary>
+                            <div class="faq-answer">
                                 <div class="faq-answer-content">
                                     <p>Our programs include independent prison oversight advocacy, drug policy & overdose prevention, arts in prison & think motion programming, criminal legal system reform, and civics & advocacy training for returning citizens.</p>
                                     <div class="faq-features">
@@ -802,10 +759,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </details>
 
-                        <div class="faq-item fade-in" data-faq="4">
-                            <div class="faq-question" onclick="toggleFAQ(4)">
+                        <details class="faq-item fade-in">
+                            <summary class="faq-question">
                                 <div class="faq-question-content">
                                     <span class="faq-icon">💰</span>
                                     <span class="faq-text">How are donations used?</span>
@@ -813,8 +770,8 @@
                                 <div class="faq-toggle">
                                     <i class="fas fa-chevron-down"></i>
                                 </div>
-                            </div>
-                            <div class="faq-answer" id="faq-answer-4">
+                            </summary>
+                            <div class="faq-answer">
                                 <div class="faq-answer-content">
                                     <p>Your donations go directly to our programs and advocacy work. We maintain transparency in our financial operations and provide regular updates on how your contributions create meaningful change in Arizona's criminal legal system.</p>
                                     <div class="faq-features">
@@ -836,10 +793,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </details>
 
-                        <div class="faq-item fade-in" data-faq="5">
-                            <div class="faq-question" onclick="toggleFAQ(5)">
+                        <details class="faq-item fade-in">
+                            <summary class="faq-question">
                                 <div class="faq-question-content">
                                     <span class="faq-icon">📞</span>
                                     <span class="faq-text">How can I contact Praxis Initiative?</span>
@@ -847,8 +804,8 @@
                                 <div class="faq-toggle">
                                     <i class="fas fa-chevron-down"></i>
                                 </div>
-                            </div>
-                            <div class="faq-answer" id="faq-answer-5">
+                            </summary>
+                            <div class="faq-answer">
                                 <div class="faq-answer-content">
                                     <p>You can reach us by email at info@praxisinitiative.org or visit our office at 4022 E. Greenway Rd. Ste. 11 PMB 1046, Phoenix, AZ 85032. We typically respond within 48 hours.</p>
                                     <div class="faq-features">
@@ -870,7 +827,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </details>
                     </div>
 
                     <div class="faq-contact-card fade-in">
@@ -931,22 +888,6 @@
                     menuToggle.setAttribute('aria-expanded', !isExpanded);
                 });
             }
-
-            // FAQ Accordion Functionality
-            window.toggleFAQ = function(faqNumber) {
-                const faqItem = document.querySelector(`[data-faq="${faqNumber}"]`);
-                const isActive = faqItem.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            };
 
             // Fade-in Animation Observer
             const fadeInObserver = new IntersectionObserver((entries) => {
@@ -1023,13 +964,6 @@
             // Contact form handling - REMOVED: Now handled by forms.js
             // Newsletter form submission - REMOVED: Now handled by forms.js
 
-            // Carousel pause on hover
-            const carousel = document.querySelector('.carousel-container');
-            if (carousel) {
-                carousel.addEventListener('mouseenter', () => carousel.style.animationPlayState = 'paused');
-                carousel.addEventListener('mouseleave', () => carousel.style.animationPlayState = 'running');
-            }
-
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -1049,14 +983,16 @@
                 btn.addEventListener('click', function (e) {
                     if (this.closest('form')) return; // Don't interfere with form submits
                     if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) return; // Don't interfere with anchor links
-                    
+
                     const originalText = this.textContent;
                     const href = this.getAttribute('href');
+
+                    this.classList.add('is-loading');
                     this.textContent = 'Loading...';
-                    this.style.opacity = '0.7';
+
                     setTimeout(() => {
+                        this.classList.remove('is-loading');
                         this.textContent = originalText;
-                        this.style.opacity = '1';
                         if (href && !href.startsWith('#')) {
                             window.location.href = href;
                         }

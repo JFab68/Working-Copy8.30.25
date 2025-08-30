@@ -90,7 +90,7 @@ _"If someone knew nothing about this codebase, would they have everything needed
   why: Netlify header configuration syntax and precedence rules
   critical: Headers only apply to files served directly by Netlify, not proxied content
 
-- url: https://modelcontextprotocol.io/specification/draft/basic/security_best_practices
+- url: https://spec.modelcontextprotocol.io/main/
   why: MCP server authentication and authorization patterns
   critical: Validate token claims, roles, privileges, and audience metadata
 

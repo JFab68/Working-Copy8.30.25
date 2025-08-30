@@ -4,16 +4,33 @@
   "description": "Praxis Initiative static site",
   "main": "index.js",
   "scripts": {
+    "// LINT, AUDIT & VALIDATE": "",
+    "lint": "node scripts/add-lang.js",
+    "audit": "npm run audit:permissions && npm run audit:images && npm run audit:links",
+    "audit:permissions": "node security/audit-permissions.js",
+    "audit:images": "node scripts/audit-images.js",
+    "audit:links": "node scripts/audit-links.js",
+    "validate:security": "node scripts/validate-security.js",
+    "test": "npm run lint && npm run audit && npm run validate:security -- --dry-run",
+    "test:visual": "node scripts/visual-audit.js",
+    "// BUILD & SERVE": "",
+    "prebuild": "npm test",
+    "build": "npm run build:images && npm run build:assets && npm run build:sitemap",
+    "build:images": "node scripts/optimize-images.js",
+    "build:assets": "node scripts/minify-assets.js",
+    "build:sitemap": "node scripts/generate-sitemap.js",
     "release": "standard-version",
-    "serve": "npx http-server -p 8080",
-    "test:visual": "node scripts/visual-audit.js"
+    "serve": "npx http-server -p 8080"
   },
   "devDependencies": {
+    "cssnano": "^7.0.1",
     "glob": "^11.0.3",
     "http-server": "^14.1.1",
     "playwright": "^1.44.1",
+    "postcss": "^8.4.38",
     "puppeteer": "^24.17.0",
-    "standard-version": "^9.5.0"
+    "standard-version": "^9.5.0",
+    "terser": "^5.31.0"
   },
   "keywords": [],
   "author": "",

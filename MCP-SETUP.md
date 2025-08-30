@@ -16,6 +16,7 @@ Model Context Protocol (MCP) allows AI assistants like Claude to interact with e
 ## Quick Start
 
 1. **Install Dependencies**
+
    ```bash
    npm install
    ```
@@ -106,14 +107,14 @@ The MCP servers are configured in `.mcp.json` using environment variable referen
 - **Purpose**: Official WordPress MCP server by Automattic
 - **Tools**: Create posts, update pages, upload media, manage users
 - **Resources**: Posts, pages, media library, comments, users
-- **Setup**: Configure WordPress credentials in `.mcp.json`
+- **Setup**: Configure WordPress credentials in `.env`
 - **Package**: @automattic/mcp-wordpress-remote (v0.2.10)
 
 ### 2. Elementor MCP Server
 - **Purpose**: Direct Elementor page builder integration  
 - **Tools**: CRUD operations on Elementor elements (sections, columns, widgets)
 - **Resources**: Elementor pages, layouts, widget configurations
-- **Setup**: Configure WordPress credentials in `.mcp.json`
+- **Setup**: Configure WordPress credentials in `.env`
 - **Package**: elementor-mcp (v1.0.1)
 - **Special**: Only MCP server built specifically for Elementor
 
@@ -131,7 +132,7 @@ The MCP servers are configured in `.mcp.json` using environment variable referen
 
 ### WordPress Integration
 
-**Prerequisites**: Ensure environment variables are configured (see [Security Configuration](#security-configuration))
+**Prerequisites**: Ensure environment variables are configured (see Security Configuration)
 
 ```javascript
 // List WordPress posts
@@ -215,9 +216,9 @@ The MCP relay server now includes basic authentication:
 ### Permission Management
 
 See `security/mcp-permissions.json` for:
-- Role-based access control
-- Server-specific permissions
-- Security policies and audit requirements
+- Role-based access control (RBAC)
+- Server-specific permissions and authentication requirements
+- Centralized security policies and audit rules
 
 For detailed security configuration, see `security/consolidated-headers.md`.
 
@@ -229,7 +230,7 @@ For detailed security configuration, see `security/consolidated-headers.md`.
 - Verify Node.js and npm are installed
 
 ### WordPress Connection
-- Update WordPress credentials in `.mcp.json`
+- Update WordPress credentials in your `.env` file
 - Generate application password in WordPress admin
 - Test connectivity with WordPress site
 

@@ -22,11 +22,14 @@ Model Context Protocol (MCP) allows AI assistants like Claude to interact with e
    ```
 
 2. **Start the MCP Relay Server**
+
    ```bash
    npm run mcp-relay
    ```
+
    
    Or directly:
+
    ```bash
    node start-mcp-relay.js
    ```
@@ -216,6 +219,7 @@ The MCP relay server now includes basic authentication:
 ### Permission Management
 
 See `security/mcp-permissions.json` for:
+
 - Role-based access control (RBAC)
 - Server-specific permissions and authentication requirements
 - Centralized security policies and audit rules
@@ -230,6 +234,7 @@ For detailed security configuration, see `security/consolidated-headers.md`.
 - Verify Node.js and npm are installed
 
 ### WordPress Connection
+
 - Update WordPress credentials in your `.env` file
 - Generate application password in WordPress admin
 - Test connectivity with WordPress site
@@ -257,4 +262,4 @@ For issues with MCP setup:
 ---
 
 **Praxis Initiative** - Criminal Justice Reform & Prison Oversight  
-Website: https://praxisinitiative.org
+Website: [https://praxisinitiative.org](https://praxisinitiative.org)

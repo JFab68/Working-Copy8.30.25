@@ -12,29 +12,7 @@
   --info-blue: #17a2b8;
   --light-blue: #e8f0ff;
   --light-purple: #e8e3f3;
-}
-
-/* =================================================================
-   PRAXIS INITIATIVE - MAIN STYLESHEET
-   Complete CSS for all pages
-   ================================================================= */
-
-/* =================================================================
-   1. GLOBAL STYLES & VARIABLES
-   ================================================================= */
-
-:root {
-  --primary-navy: var(--primary-navy);
-  --secondary-maroon: var(--secondary-maroon)000;
-  --white: var(--white);
-  --light-gray: var(--light-gray);
-  --dark-gray: var(--dark-gray);
-  --medium-gray: var(--medium-gray);
-  --light-purple: #e8e3f3;
   --urgent-red: var(--danger-red);
-  --warning-orange: var(--warning-orange);
-  --success-green: var(--success-green);
-  --light-blue: #e8f0ff;
 }
 
 body {
@@ -92,6 +70,70 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   outline-offset: 2px;
   box-shadow: 0 0 0 2px var(--primary-navy);
 }
+
+/* =================================================================
+   UTILITY CLASSES
+   ================================================================= */
+
+/* --- Spacing --- */
+.mt-10 { margin-top: 10px !important; }
+.mt-15 { margin-top: 15px !important; }
+.mt-20 { margin-top: 20px !important; }
+.mt-25 { margin-top: 25px !important; }
+.mt-30 { margin-top: 30px !important; }
+.mt-40 { margin-top: 40px !important; }
+.mt-50 { margin-top: 50px !important; }
+.mt-60 { margin-top: 60px !important; }
+
+.mb-10 { margin-bottom: 10px !important; }
+.mb-15 { margin-bottom: 15px !important; }
+.mb-16 { margin-bottom: 16px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.mb-25 { margin-bottom: 25px !important; }
+.mb-30 { margin-bottom: 30px !important; }
+.mb-40 { margin-bottom: 40px !important; }
+.mb-50 { margin-bottom: 50px !important; }
+
+.py-80 { padding-top: 80px !important; padding-bottom: 80px !important; }
+.py-60 { padding-top: 60px !important; padding-bottom: 60px !important; }
+.py-40 { padding-top: 40px !important; padding-bottom: 40px !important; }
+.py-30 { padding-top: 30px !important; padding-bottom: 30px !important; }
+.py-20 { padding-top: 20px !important; padding-bottom: 20px !important; }
+
+.p-20 { padding: 20px !important; }
+.p-30 { padding: 30px !important; }
+.p-40 { padding: 40px !important; }
+
+/* --- Layout --- */
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+.align-items-center { align-items: center !important; }
+.justify-content-center { justify-content: center !important; }
+.text-center { text-align: center !important; }
+
+/* --- Gaps --- */
+.gap-10 { gap: 10px !important; }
+.gap-15 { gap: 15px !important; }
+.gap-20 { gap: 20px !important; }
+.gap-25 { gap: 25px !important; }
+.gap-30 { gap: 30px !important; }
+.gap-40 { gap: 40px !important; }
+.gap-60 { gap: 60px !important; }
+
+/* --- Sizing --- */
+.w-100 { width: 100% !important; }
+.max-w-600 { max-width: 600px !important; }
+.max-w-700 { max-width: 700px !important; }
+.max-w-800 { max-width: 800px !important; }
+
+/* --- Positioning --- */
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+/* --- Text & Color --- */
+.text-white { color: var(--white) !important; }
+.text-primary { color: var(--primary-navy) !important; }
+.text-secondary { color: var(--secondary-maroon) !important; }
+.bg-light-blue { background-color: var(--light-blue) !important; }
 
 /* =================================================================
    3. HEADER STYLES
@@ -234,19 +276,15 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 .hero {
   background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-maroon) 100%);
   color: var(--white);
-  padding: 80px 0;
-  text-align: center;
 }
 
 .hero-content {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
+  /* Replaced by clamp() for fluid typography */
+  font-size: clamp(1.8rem, 5vw + 1rem, 3.5rem);
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.2;
@@ -255,22 +293,15 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 .hero-text p {
   font-size: 1.25rem;
   margin-bottom: 30px;
-  max-width: 600px;
   opacity: 0.9;
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .hero-features {
-  display: flex;
-  gap: 40px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .feature-item {
@@ -400,7 +431,7 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
    ================================================================= */
 
 .section {
-  padding: 80px 0;
+  /* Padding is now controlled by utility classes like .py-80 */
 }
 
 .section-label {
@@ -413,7 +444,8 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 }
 
 .section h2 {
-  font-size: 2.5rem;
+  /* Replaced by clamp() for fluid typography */
+  font-size: clamp(1.6rem, 2vw + 1.2rem, 2.5rem);
   font-weight: 700;
   color: var(--dark-gray);
   margin-bottom: 20px;
@@ -423,7 +455,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 .section-intro {
   font-size: 1.125rem;
   color: var(--medium-gray);
-  margin-bottom: 40px;
   max-width: 800px;
 }
 
@@ -439,14 +470,11 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 
 /* Connect Section */
 .connect {
-  background-color: var(--light-blue);
+  /* Background color is now controlled by .bg-light-blue utility class */
 }
 
 .connect-content {
-  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
 }
 
 .connect-text h2 {
@@ -454,17 +482,11 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 }
 
 .newsletter-signup {
-  margin-top: 40px;
-  padding: 30px;
-  background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* This element should now use the .card and .p-30 utility classes */
 }
 
 .newsletter-form {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  /* Layout is now controlled by .d-flex and .gap-15 utility classes */
 }
 
 .newsletter-form input {
@@ -484,24 +506,23 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 .change-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
 }
 
-.change-card {
+/* --- BEM Component: Card --- */
+.card {
   background: var(--white);
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.change-card:hover {
+.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-.change-card-image {
+/* Card Element: Image */
+.card__image {
   height: 200px;
   background-color: var(--light-gray);
   display: flex;
@@ -513,42 +534,40 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   padding: 20px;
 }
 
-.change-card-content {
+/* Card Element: Content */
+.card__content {
   padding: 30px;
 }
 
-.change-card-content h3 {
+/* Card Element: Title */
+.card__title {
   font-size: 1.5rem;
   color: var(--primary-navy);
   margin-bottom: 16px;
+}
+
+/* Card Modifier: Change Card */
+.card--change {
+  overflow: hidden;
 }
 
 /* Team Section */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
 }
 
-.team-member {
+/* Card Modifier: Team Member */
+.card--team {
   text-align: center;
-  background: var(--white);
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
-.team-member:hover {
-  transform: translateY(-5px);
-}
-
-.team-member-image {
+.card__image-container--team {
   margin-bottom: 20px;
 }
 
-.team-headshot {
+.card__headshot {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -556,19 +575,13 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   border: 4px solid var(--primary-navy);
 }
 
-.team-member h3 {
-  font-size: 1.5rem;
-  color: var(--primary-navy);
-  margin-bottom: 8px;
-}
-
-.role {
+.card__subtitle--role {
   color: var(--secondary-maroon);
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-.bio {
+.card__text--bio {
   color: var(--medium-gray);
   font-size: 0.95rem;
   line-height: 1.6;
@@ -587,7 +600,8 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 }
 
 .stat-number {
-  font-size: 3rem;
+  /* Replaced by clamp() for fluid typography */
+  font-size: clamp(2.5rem, 1vw + 2.2rem, 3rem);
   font-weight: 700;
   color: var(--primary-navy);
   line-height: 1;
@@ -836,7 +850,8 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 }
 
 .crisis-hero h1 {
-  font-size: 4rem;
+  /* Replaced by clamp() for fluid typography */
+  font-size: clamp(2rem, 5vw + 1rem, 4rem);
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.1;
@@ -871,7 +886,8 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 }
 
 .shock-number {
-  font-size: 3.5rem;
+  /* Replaced by clamp() for fluid typography */
+  font-size: clamp(2.2rem, 3vw + 1.5rem, 3.5rem);
   font-weight: 700;
   color: var(--white);
   line-height: 1;
@@ -1040,7 +1056,8 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 }
 
 .big-number {
-  font-size: 8rem;
+  /* Replaced by clamp() for fluid typography */
+  font-size: clamp(4rem, 10vw + 1rem, 8rem);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 20px;
@@ -1166,8 +1183,9 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 }
 
 .urgent-action h2 {
+  /* Replaced by clamp() for fluid typography */
+  font-size: clamp(2rem, 2vw + 1.5rem, 3rem);
   color: var(--white);
-  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -1308,10 +1326,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
     gap: 20px;
   }
 
-.hero-text h1 {
-    font-size: 2.8rem;
-  }
-
 .hero-features {
     gap: 30px;
   }
@@ -1329,10 +1343,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 .facts-grid {
     grid-template-columns: 1fr;
     gap: 50px;
-  }
-
-.crisis-hero h1 {
-    font-size: 3rem;
   }
 
 .shocking-stats {
@@ -1377,10 +1387,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
     padding: 60px 0;
   }
 
-.hero-text h1 {
-    font-size: 2.2rem;
-  }
-
 .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -1393,10 +1399,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 
 .section {
     padding: 60px 0;
-  }
-
-.section h2 {
-    font-size: 2rem;
   }
 
 .change-cards {
@@ -1425,10 +1427,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 
 .crisis-hero {
     padding: 80px 0;
-  }
-
-.crisis-hero h1 {
-    font-size: 2.5rem;
   }
 
 .shocking-stats {
@@ -1462,9 +1460,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
     align-items: center;
   }
 
-.urgent-action h2 {
-    font-size: 2.5rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1474,14 +1469,6 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
 
 .header-container {
     padding: 0 16px;
-  }
-
-.hero-text h1 {
-    font-size: 1.8rem;
-  }
-
-.section h2 {
-    font-size: 1.6rem;
   }
 
 .btn {
@@ -1496,26 +1483,13 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
     grid-template-columns: 1fr;
   }
 
-.stat-number {
-    font-size: 2.5rem;
-  }
-
-.crisis-hero h1 {
-    font-size: 2rem;
-  }
-
 .story-card {
     padding: 25px;
   }
 
 .story-quote:before {
-    font-size: 3rem;
     top: -5px;
     left: -15px;
-  }
-
-.urgent-action h2 {
-    font-size: 2rem;
   }
 }
 

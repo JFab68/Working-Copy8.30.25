@@ -30,6 +30,8 @@
     "postcss": "^8.4.38",
     "puppeteer": "^24.17.0",
     "standard-version": "^9.5.0",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.0",
     "terser": "^5.31.0"
   },
   "keywords": [],

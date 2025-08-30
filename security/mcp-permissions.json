@@ -1,0 +1,225 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-01-30T00:00:00.000Z",
+  "description": "Centralized MCP server permission management for Praxis Initiative",
+  "roles": {
+    "readonly": {
+      "description": "Read-only access for basic operations",
+      "permissions": [
+        "filesystem:read",
+        "browser-tools:screenshot",
+        "browser-tools:navigate",
+        "puppeteer:screenshot",
+        "puppeteer:navigate"
+      ]
+    },
+    "developer": {
+      "description": "Standard development permissions",
+      "permissions": [
+        "filesystem:read",
+        "filesystem:list",
+        "filesystem:get_info",
+        "browser-tools:*",
+        "puppeteer:*",
+        "memory:read",
+        "memory:search",
+        "serena:*"
+      ],
+      "inherits": ["readonly"]
+    },
+    "admin": {
+      "description": "Full administrative access",
+      "permissions": [
+        "filesystem:write",
+        "filesystem:edit",
+        "filesystem:create",
+        "github:*",
+        "memory:write",
+        "memory:delete",
+        "wordpress:write",
+        "wordpress:create",
+        "wordpress:delete",
+        "ide:*"
+      ],
+      "inherits": ["developer"]
+    }
+  },
+  "servers": {
+    "automattic-wordpress": {
+      "description": "Official WordPress MCP server by Automattic",
+      "role": "admin",
+      "authentication": {
+        "method": "env_variables",
+        "required_vars": ["WORDPRESS_URL", "WORDPRESS_USERNAME", "WORDPRESS_PASSWORD"],
+        "audience": "praxis-wordpress-mcp"
+      },
+      "package": "@automattic/mcp-wordpress-remote",
+      "version": "0.2.10"
+    },
+    "elementor-mcp": {
+      "description": "Elementor page builder integration",
+      "role": "admin", 
+      "authentication": {
+        "method": "env_variables",
+        "required_vars": ["WP_URL", "WP_APP_USER", "WP_APP_PASSWORD"],
+        "audience": "praxis-elementor-mcp"
+      },
+      "package": "elementor-mcp",
+      "version": "1.0.1"
+    },
+    "browser-tools": {
+      "description": "Browser automation and debugging tools",
+      "role": "developer",
+      "authentication": {
+        "method": "none"
+      },
+      "built_in": true
+    },
+    "filesystem": {
+      "description": "File system operations",
+      "role": "developer",
+      "authentication": {
+        "method": "none"
+      },
+      "built_in": true,
+      "security_notes": [
+        "Restricted to project directory",
+        "No access to system files outside project scope"
+      ]
+    },
+    "puppeteer": {
+      "description": "Browser automation via Puppeteer",
+      "role": "developer",
+      "authentication": {
+        "method": "none"
+      },
+      "built_in": true
+    },
+    "github": {
+      "description": "GitHub integration for repository operations",
+      "role": "admin",
+      "authentication": {
+        "method": "env_variables",
+        "required_vars": ["GITHUB_TOKEN"],
+        "audience": "praxis-github-mcp"
+      },
+      "built_in": true
+    },
+    "memory": {
+      "description": "Knowledge graph and memory operations", 
+      "role": "developer",
+      "authentication": {
+        "method": "none"
+      },
+      "built_in": true
+    },
+    "ide": {
+      "description": "IDE integration and code execution",
+      "role": "admin",
+      "authentication": {
+        "method": "none"
+      },
+      "built_in": true,
+      "security_notes": [
+        "Code execution capabilities require careful permission management"
+      ]
+    },
+    "serena": {
+      "description": "Serena codebase analysis and editing",
+      "role": "developer", 
+      "authentication": {
+        "method": "none"
+      },
+      "built_in": true,
+      "security_notes": [
+        "Semantic code operations with symbol-level precision"
+      ]
+    }
+  },
+  "bash_permissions": {
+    "description": "Bash command permissions with specific patterns",
+    "allowed_patterns": [
+      {
+        "pattern": "npm search:*",
+        "description": "NPM package searching",
+        "role_required": "developer"
+      },
+      {
+        "pattern": "npm info:*", 
+        "description": "NPM package information",
+        "role_required": "developer"
+      },
+      {
+        "pattern": "npm install:*",
+        "description": "NPM package installation",
+        "role_required": "admin"
+      },
+      {
+        "pattern": "node:*",
+        "description": "Node.js script execution",
+        "role_required": "developer"
+      },
+      {
+        "pattern": "dir:*",
+        "description": "Directory listing (Windows)",
+        "role_required": "readonly"
+      }
+    ],
+    "restricted_patterns": [
+      {
+        "pattern": "powershell:*",
+        "description": "PowerShell execution - overly broad",
+        "recommendation": "Use specific PowerShell commands only"
+      },
+      {
+        "pattern": "Bash(*:*)",
+        "description": "Wildcard bash permissions",
+        "recommendation": "Replace with specific command patterns"
+      }
+    ]
+  },
+  "web_permissions": {
+    "description": "Web access and search permissions",
+    "allowed": [
+      {
+        "tool": "WebSearch",
+        "description": "Web search capabilities",
+        "role_required": "developer"
+      },
+      {
+        "tool": "WebFetch",
+        "domain_restrictions": ["praxisinitiative.org"],
+        "description": "Web fetching restricted to project domain",
+        "role_required": "developer"
+      }
+    ]
+  },
+  "security_policies": {
+    "credential_management": {
+      "never_hardcode": [
+        "passwords",
+        "api_keys", 
+        "tokens",
+        "secrets"
+      ],
+      "use_environment_variables": true,
+      "rotate_credentials": "every_90_days",
+      "validate_audience_claims": true
+    },
+    "least_privilege": {
+      "default_role": "readonly",
+      "escalation_required": ["admin"],
+      "review_period": "quarterly"
+    },
+    "audit_requirements": {
+      "log_all_admin_operations": true,
+      "monthly_permission_review": true,
+      "automated_scanning": "security/audit-permissions.js"
+    }
+  },
+  "validation": {
+    "schema_version": "1.0",
+    "required_fields": ["servers", "roles", "security_policies"],
+    "validation_script": "scripts/validate-security.js"
+  }
+}

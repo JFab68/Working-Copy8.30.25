@@ -37,7 +37,41 @@ Model Context Protocol (MCP) allows AI assistants like Claude to interact with e
 
 ## Configuration
 
-The MCP servers are configured in `.mcp.json`:
+## Security Configuration
+
+**⚠️ IMPORTANT**: Credentials are now managed via environment variables for security.
+
+### Environment Setup
+
+1. **Copy the environment template**:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Configure your credentials in `.env`**:
+   ```bash
+   # WordPress Configuration
+   WORDPRESS_URL=https://praxisinitiative.org
+   WORDPRESS_USERNAME=your-username
+   WORDPRESS_PASSWORD=your-app-password
+   
+   # Elementor MCP Configuration
+   WP_URL=https://praxisinitiative.org
+   WP_APP_USER=your-username
+   WP_APP_PASSWORD=your-app-password
+   
+   # MCP Authentication
+   MCP_AUTH_TOKEN=your-secure-token
+   ```
+
+3. **Ensure `.env` is in `.gitignore`**:
+   ```bash
+   echo ".env" >> .gitignore
+   ```
+
+### MCP Server Configuration
+
+The MCP servers are configured in `.mcp.json` using environment variable references:
 
 ```json
 {
@@ -47,9 +81,9 @@ The MCP servers are configured in `.mcp.json`:
       "command": "npx",
       "args": ["-y", "@automattic/mcp-wordpress-remote"],
       "env": {
-        "WORDPRESS_URL": "https://praxisinitiative.org",
-        "WORDPRESS_USERNAME": "Coder",
-        "WORDPRESS_PASSWORD": "5mu7 wpMy 7Q8h W99G yPzR KYMj"
+        "WORDPRESS_URL": "${WORDPRESS_URL}",
+        "WORDPRESS_USERNAME": "${WORDPRESS_USERNAME}",
+        "WORDPRESS_PASSWORD": "${WORDPRESS_PASSWORD}"
       }
     },
     "elementor-mcp": {
@@ -57,9 +91,9 @@ The MCP servers are configured in `.mcp.json`:
       "command": "npx",
       "args": ["-y", "elementor-mcp"],
       "env": {
-        "WP_URL": "https://praxisinitiative.org",
-        "WP_APP_USER": "Coder",
-        "WP_APP_PASSWORD": "5mu7 wpMy 7Q8h W99G yPzR KYMj"
+        "WP_URL": "${WP_URL}",
+        "WP_APP_USER": "${WP_APP_USER}",
+        "WP_APP_PASSWORD": "${WP_APP_PASSWORD}"
       }
     }
   }
@@ -96,6 +130,9 @@ The MCP servers are configured in `.mcp.json`:
 ## Usage Examples
 
 ### WordPress Integration
+
+**Prerequisites**: Ensure environment variables are configured (see [Security Configuration](#security-configuration))
+
 ```javascript
 // List WordPress posts
 const posts = await mcpClient.callTool('wordpress/list_posts', {
@@ -151,10 +188,38 @@ const errors = await mcpClient.callTool('get_console_errors');
 
 ## Security Notes
 
-- WordPress credentials are stored in environment variables
-- MCP relay runs on localhost only by default
-- All connections use secure WebSocket protocols
-- Sensitive operations require authentication
+- **Credentials**: All sensitive data stored in environment variables (never hardcoded)
+- **MCP Relay**: Runs on localhost with basic authentication (see [Authentication](#authentication))
+- **Transport**: Secure WebSocket protocols with token validation
+- **Permissions**: Centralized management via `security/mcp-permissions.json`
+- **Auditing**: Regular security audits via `node security/audit-permissions.js`
+
+### Authentication
+
+The MCP relay server now includes basic authentication:
+
+1. **Set authentication token**:
+   ```bash
+   export MCP_AUTH_TOKEN="your-secure-random-token"
+   ```
+
+2. **Connect with authentication**:
+   ```javascript
+   const ws = new WebSocket('ws://localhost:3000/mcp-relay', {
+     headers: {
+       'Authorization': `Bearer ${process.env.MCP_AUTH_TOKEN}`
+     }
+   });
+   ```
+
+### Permission Management
+
+See `security/mcp-permissions.json` for:
+- Role-based access control
+- Server-specific permissions
+- Security policies and audit requirements
+
+For detailed security configuration, see `security/consolidated-headers.md`.
 
 ## Troubleshooting
 

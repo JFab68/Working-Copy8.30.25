@@ -1,9 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(claude config set --global env.WORDPRESS_URL \"https://praxisinitiative.org\")",
+      "Bash(claude config set --global env.WORDPRESS_URL \"${WORDPRESS_URL}\")",
       "Bash(claude config set:*)",
-      "Bash(claude config set --global env.WORDPRESS_PASSWORD \"your-app-password\")",
+      "Bash(claude config set --global env.WORDPRESS_PASSWORD \"${WORDPRESS_PASSWORD}\")",
       "mcp__playwright__playwright_navigate",
       "mcp__playwright__playwright_evaluate",
       "Bash(npm search \"mcp relay\")",
@@ -27,8 +27,11 @@
       "mcp__filesystem__directory_tree",
       "mcp__filesystem__read_media_file",
       "mcp__puppeteer__puppeteer_navigate",
-      "Bash(powershell:*)"
+      "Bash(dir:*)",
+      "# Reference: security/mcp-permissions.json for centralized permission management"
     ],
+    "_security_note": "Credentials moved to environment variables. See .env.example for setup.",
+    "_permission_reference": "security/mcp-permissions.json",
     "defaultMode": "acceptEdits"
   }
 }

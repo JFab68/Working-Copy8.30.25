@@ -20,5 +20,6 @@
   "license": "ISC",
   "dependencies": {
     "sharp": "^0.34.3"
-  }
+  },
+  "type": "module"
 }

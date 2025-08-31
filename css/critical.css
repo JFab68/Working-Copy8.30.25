@@ -431,9 +431,7 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
    7. SECTION STYLES
    ================================================================= */
 
-.section {
-  /* Padding is now controlled by utility classes like .py-80 */
-}
+/* Padding for .section is now controlled by utility classes like .py-80 */
 
 .section-label {
   color: var(--primary-navy);
@@ -5185,8 +5183,6 @@ to {
         gap: 15px;
     }
 
-.file-upload-area {
-        pa
 /* Optimized Donation Styles */
 .donation-impact { background: var(--light-blue); padding: 60px 0; }
 

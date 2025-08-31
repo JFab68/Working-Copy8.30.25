@@ -463,7 +463,7 @@ class AnimatedCounters {
 
 class ScrollAnimations {
     constructor() {
-        this.elements = document.querySelectorAll('.program-feature, .program-text, .crisis-stat');
+        this.elements = document.querySelectorAll('.program-feature, .program-text, .crisis-stat, .card--change, .card--team, .impact-item, .challenge-item, .reform-impact-card, .faq-intro-card, .faq-contact-card, .nationwide-impact-summary, .crisis-card, .harm-reduction-card, .approach-card, .tool-card');
         this.init();
     }
 

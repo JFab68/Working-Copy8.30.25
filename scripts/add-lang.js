@@ -3,6 +3,7 @@
 // This is a cross-platform replacement for add-lang.ps1.
 
 import { glob } from 'glob';
+import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -10,7 +11,7 @@ const HTML_FILES_PATTERN = '**/*.html';
 const IGNORE_PATTERNS = ['node_modules/**', 'audits/**'];
 const ROOT_DIR = process.cwd();
 
-async function addLangAttribute() {
+export default async function addLangAttribute() {
     console.log('🗣️  Checking HTML files for missing lang attribute...');
     const files = await glob(HTML_FILES_PATTERN, {
         cwd: ROOT_DIR,
@@ -40,4 +41,7 @@ async function addLangAttribute() {
     console.log(updatedCount > 0 ? `\n✨ Successfully updated ${updatedCount} file(s).` : '\n✅ All HTML files already have the lang attribute.');
 }
 
-addLangAttribute().catch(console.error);
+// This ensures the script runs only when executed directly
+if (import.meta.url.startsWith('file:') && process.argv[1] === fileURLToPath(import.meta.url)) {
+    addLangAttribute().catch(console.error);
+}

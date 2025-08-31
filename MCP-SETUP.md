@@ -53,20 +53,15 @@ Model Context Protocol (MCP) allows AI assistants like Claude to interact with e
    ```
 
 2. **Configure your credentials in `.env`**:
-   ```bash
-   # WordPress Configuration
-   WORDPRESS_URL=https://praxisinitiative.org
-   WORDPRESS_USERNAME=your-username
-   WORDPRESS_PASSWORD=your-app-password
-   
-   # Elementor MCP Configuration
-   WP_URL=https://praxisinitiative.org
-   WP_APP_USER=your-username
-   WP_APP_PASSWORD=your-app-password
-   
-   # MCP Authentication
-   MCP_AUTH_TOKEN=your-secure-token
-   ```
+   Open the `.env` file and set the following variables. Use the values from your WordPress Application Password and a securely generated token.
+
+   - `WORDPRESS_URL`: https://praxisinitiative.org
+   - `WORDPRESS_USERNAME`: your-wp-username
+   - `WORDPRESS_PASSWORD`: your-generated-app-password
+   - `WP_URL`: (For Elementor) Same as `WORDPRESS_URL`.
+   - `WP_APP_USER`: (For Elementor) Same as `WORDPRESS_USERNAME`.
+   - `WP_APP_PASSWORD`: (For Elementor) Same as `WORDPRESS_PASSWORD`.
+   - `MCP_AUTH_TOKEN`: your-securely-generated-token
 
 3. **Ensure `.env` is in `.gitignore`**:
    ```bash
@@ -204,7 +199,7 @@ The MCP relay server now includes basic authentication:
 
 1. **Set authentication token**:
    ```bash
-   export MCP_AUTH_TOKEN="your-secure-random-token"
+   export MCP_AUTH_TOKEN="<your-secure-mcp-token>"
    ```
 
 2. **Connect with authentication**:

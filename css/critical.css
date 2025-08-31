@@ -139,6 +139,7 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
    3. HEADER STYLES
    ================================================================= */
 
+/* BEM Block: .header */
 .header {
   position: fixed;
   top: 0;
@@ -150,7 +151,7 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   border-bottom: 3px solid var(--primary-navy);
 }
 
-.header-container {
+.header__container {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 24px;
@@ -160,30 +161,30 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   min-height: 92px;
 }
 
-.header-logo {
+.header__logo {
   flex-shrink: 0;
 }
 
-.logo-img {
+.header__logo-img {
   height: 60px;
   width: auto;
   max-width: 200px;
 }
 
 /* Navigation Styles */
-.header-nav {
+.header__nav {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.nav-links-row {
+.header__nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.header-nav a {
+.header__nav-link {
   color: var(--dark-gray);
   text-decoration: none;
   font-weight: 500;
@@ -194,21 +195,21 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   position: relative;
 }
 
-.header-nav a:hover {
+.header__nav-link:hover {
   color: var(--primary-navy);
   background-color: var(--light-gray);
 }
 
 /* Dropdown Menu */
-.dropdown {
+.header__dropdown {
   position: relative;
 }
 
-.dropdown-toggle {
+.header__dropdown-toggle {
   cursor: pointer;
 }
 
-.dropdown-menu {
+.header__dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -224,13 +225,13 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   z-index: 1001;
 }
 
-.dropdown:hover .dropdown-menu {
+.header__dropdown:hover .header__dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-.dropdown-menu a {
+.header__dropdown-menu-item {
   display: block;
   padding: 12px 20px;
   color: var(--dark-gray);
@@ -239,18 +240,18 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   transition: all 0.2s ease;
 }
 
-.dropdown-menu a:hover {
+.header__dropdown-menu-item:hover {
   background-color: var(--light-gray);
   color: var(--primary-navy);
 }
 
 /* Header CTA */
-.header-cta {
+.header__cta {
   flex-shrink: 0;
 }
 
 /* Mobile Menu Toggle */
-.mobile-menu-toggle {
+.header__mobile-toggle {
   display: none;
   flex-direction: column;
   background: none;
@@ -261,7 +262,7 @@ a:focus, button:focus, [role="button"]:focus, input:focus, select:focus, textare
   z-index: 1003; /* Ensure it's above the nav */
 }
 
-.hamburger-bar {
+.header__hamburger-bar {
   width: 25px;
   height: 3px;
   background-color: var(--dark-gray);
@@ -1692,21 +1693,11 @@ body {
   transition: all 0.1s ease;
 }
 
-/* Link hover effects */
-a {
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
-}
-
 .nav-links-row a:hover {
   color: var(--secondary-maroon);
   text-decoration: underline;
   text-decoration-color: var(--secondary-maroon);
 }
-
-/* Card hover effects */
-.card, .program-card, .partner-card, 
-
-.card:hover, .program-card:hover, .partner-card:hover, 
 
 /* Logo hover effect */
 .logo-link:hover .logo-img {
@@ -1738,27 +1729,6 @@ to {
     transform: translateY(0);
   }
 }
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Loading state animations */
-
-
-/* Fade in animation for content */
-
-
-.fade-in-up
-
-/* Stagger animation delays */
-
-
-
-
-
-
 
 
 /* =================================================================
@@ -1970,28 +1940,6 @@ html {
    18. PARTNERS PAGE INTERACTIVE ELEMENTS
    ================================================================= */
 
-/* Partnership Statistics */
-
-
-
-
-.partnership-stat .stat-number {
-  font-size: 36px;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.partnership-stat .stat-label {
-  font-size: 14px;
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Partners Controls */
-
-
 .controls-wrapper {
   display: flex;
   gap: 30px;
@@ -2084,21 +2032,6 @@ html {
   font-size: 14px;
 }
 
-/* Enhanced Partner Cards */
-
-
-
-
-.partner-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
 .partners-list.list-view .partner-card {
   flex-direction: row;
   align-items: center;
@@ -2108,8 +2041,6 @@ html {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
-
-.partner-card
 
 .partner-logo {
   width: 100%;
@@ -2128,13 +2059,6 @@ html {
 .partner-content {
   padding: 25px;
   flex: 1;
-}
-
-.partner-content h2 {
-  color: var(--primary-navy);
-  margin-bottom: 12px;
-  font-size: 20px;
-  line-height: 1.3;
 }
 
 .partner-content p {
@@ -2206,12 +2130,9 @@ html {
 
 .partners-list.list-view .partner-logo {
     width: 100%;
-   
-/* Optimized Partnership Network */
-
-.partnership-network h2 { text-align: center; margin-bottom: 10px; color: var(--primary-navy); font-size: 32px; }
-
-.partnership-network p { text-align: center; margin-bottom: 50px; color: var(--medium-gray); font-size: 18px; }
+    /* Optimized Partnership Network */
+    height: auto;
+}
 
 /* =================================================================
    PROGRAMS PAGE CARD/WIDGET STYLES
@@ -4887,13 +4808,7 @@ html {
 
 .file-upload-area {
     border: 2px dashed var(--light-gray);
-    border-radius: 8px;
-    padding: 40px 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-    background: var(--light-blue);
-}
+    border-radius: 8px;    padding: 40px 20px;    text-align: center;    cursor: pointer;    transition: border-color 0.3s ease, background-color 0.3s ease;    background: var(--light-blue); }
 
 .file-upload-area:hover,
 .file-upload-area.dragover {
@@ -5301,14 +5216,6 @@ html {
    17. ABOUT PAGE FEATURE BADGES & MISSING STYLES
    ================================================================= */
 
-/* About page feature badges */
-
-
-
-
-
-
-/* About page hero section */
 .about-hero {
   background: linear-gradient(135deg, var(--primary-navy), var(--secondary-maroon));
   color: white;
@@ -5349,9 +5256,6 @@ html {
   margin-right: auto;
   line-height: 1.6;
 }
-
-/* About page mission section */
-
 
 .mission-content {
   display: grid;
@@ -5409,7 +5313,6 @@ html {
   font-weight: 500;
 }
 
-/* About page principles cards */
 .principles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5458,9 +5361,6 @@ html {
   font-size: 14px;
 }
 
-/* Why Praxis Matters section */
-
-
 .impact-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -5505,28 +5405,6 @@ html {
   font-size: 14px;
 }
 
-/* Team section enhancements */
-
-
-
-
-
-
-.team-stat-card .stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.team-stat-card .stat-label {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  opacity: 0.9;
-}
-
-/* Enhanced team member cards */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5602,24 +5480,6 @@ html {
   margin-bottom: 20px;
   font-size: 14px;
 }
-
-.team-member 
-
-.expertise-tag {
-  background: linear-gradient(135deg, var(--primary-navy), var(--secondary-maroon));
-  color: white;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-/* Timeline section */
-
-
-
 
 .timeline-section .container {
   position: relative;
@@ -5711,11 +5571,6 @@ html {
   font-size: 14px;
 }
 
-/* Get Involved section */
-
-
-
-
 .involvement-card {
   background: white;
   padding: 40px 30px;
@@ -5769,39 +5624,6 @@ html {
   display: inline-block;
 }
 
-.involvement-card .btn:hover {
-  background: var(--secondary-maroon);
-  transform: translateY(-2px);
-}
-
-/* Final stats section */
-
-
-
-
-
-
-.final-stat .stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--secondary-maroon);
-  display: block;
-  margin-bottom: 10px;
-}
-
-.final-stat .stat-label {
-  color: var(--medium-gray);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 14px;
-}
-
-/* Contact cards section */
-
-
-
-
 .contact-card {
   background: white;
   padding: 40px 30px;
@@ -5854,11 +5676,6 @@ html {
   font-size: 14px;
   transition: all 0.3s ease;
   display: inline-block;
-}
-
-.contact-card .btn:hover {
-  background: var(--secondary-maroon);
-  transform: translateY(-2px);
 }
 
 /* Responsive design for About page */

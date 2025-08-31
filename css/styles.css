@@ -2560,10 +2560,18 @@ html {
 }
 
 /* Ensure specific card types are hidden initially to prevent flash */
-.change-card:not(.visible),
-.team-member:not(.visible),
+.card--change:not(.visible),
+.card--team:not(.visible),
 .impact-item:not(.visible),
-.challenge-item:not(.visible) {
+.challenge-item:not(.visible),
+.reform-impact-card:not(.visible),
+.faq-intro-card:not(.visible),
+.faq-contact-card:not(.visible),
+.nationwide-impact-summary:not(.visible),
+.crisis-card:not(.visible),
+.harm-reduction-card:not(.visible),
+.approach-card:not(.visible),
+.tool-card:not(.visible) {
  opacity: 0;
  transform: translateY(30px);
 }

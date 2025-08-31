@@ -62,8 +62,8 @@ class ScrollAnimations {
     }
 
     init() {
-        // Find elements that should be animated
-        const elementsToAnimate = document.querySelectorAll('.change-card, .team-member, .impact-item, .challenge-item');
+        // Find elements that should be animated - Updated to match actual HTML classes
+        const elementsToAnimate = document.querySelectorAll('.card--change, .card--team, .impact-item, .challenge-item, .reform-impact-card, .faq-intro-card, .faq-contact-card, .nationwide-impact-summary, .crisis-card, .harm-reduction-card, .approach-card, .tool-card');
         
         elementsToAnimate.forEach(el => {
             // Ensure consistent initial state

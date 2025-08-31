@@ -1,0 +1,17 @@
+node:internal/child_process:420
+    throw new ErrnoException(err, 'spawn');
+          ^
+
+Error: spawn UNKNOWN
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at Object.spawn (node:child_process:762:9)
+    at new Process (file:///c:/Users/johnf/Newest-Website-8-11-2025/node_modules/@puppeteer/browsers/lib/esm/launch.js:151:45)
+    at launch (file:///c:/Users/johnf/Newest-Website-8-11-2025/node_modules/@puppeteer/browsers/lib/esm/launch.js:56:12)
+    at ChromeLauncher.launch (file:///c:/Users/johnf/Newest-Website-8-11-2025/node_modules/puppeteer-core/lib/esm/puppeteer/node/BrowserLauncher.js:66:32)
+    at async file:///c:/Users/johnf/Newest-Website-8-11-2025/tools/audit-cards.mjs:119:19 {
+  errno: -4094,
+  code: 'UNKNOWN',
+  syscall: 'spawn'
+}
+
+Node.js v20.19.2
